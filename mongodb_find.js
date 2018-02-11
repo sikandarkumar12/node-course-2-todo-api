@@ -1,5 +1,4 @@
 const {MongoClient, ObjectID} = require('mongodb');
-
 var obj = new ObjectID();
 
 MongoClient.connect('mongodb://localhost:27017/test', (err, db) => {
@@ -22,6 +21,7 @@ else{
 db.collection('Users').find({name:'sikandar'}).toArray().then((docs)=>{
    console.log(JSON.stringify(docs , undefined , 4));   
 });
+
 db.close();
 
 }});
